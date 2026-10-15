@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: mcp-vols-envireco
+    runtime: python
+    plan: starter
+    region: frankfurt
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m src.server
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.5
+      - key: DUFFEL_API_KEY
+        sync: false
+      - key: AIRTABLE_TOKEN
+        sync: false
+      - key: AIRTABLE_BASE_ID
+        value: appOaaEm9hZALEfBz
+      - key: MCP_LOGIN_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PUBLIC_BASE_URL
+        sync: false

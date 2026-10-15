@@ -1,0 +1,5 @@
+fastmcp==4.1.0
+httpx==0.28.1
+PyJWT==2.15.1
+email-validator==2.3.0
+python-dotenv==1.2.4
